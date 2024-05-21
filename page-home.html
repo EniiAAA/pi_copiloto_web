@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: rgba(26, 38, 203, 1);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .barra-nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .barra-nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .barra-nav li {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .barra-nav li a img {
+      width: 20px; 
+      height: auto; 
+    }    
+
+    .barra-nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: rgba(26, 38, 203, 0.7);
+      min-width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .barra-nav li a:hover {
+      background-color: rgba(26, 38, 203, 1);
+    }
+
+    .topo {
+      padding: 10px 20px 0px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topo h1 {
+      font-size: 22px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .topo a {
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(26, 38, 203, 1);
+    }
+
+    .content {
+      padding: 20px;
+      max-height: calc(100vh - 100px); /* Subtrai a altura do cabeçalho */
+      overflow-y: auto; /* Ativar a rolagem apenas na direção vertical */
+    }
+
+    .card {
+      background-color: rgb(244, 245, 255, 1);
+      border-radius: 30px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-prof {
+      display: flex;
+      align-items: center;
+    }
+
+    .card-prof aside {
+      padding-right: 20px;
+    }
+
+    .card-prof img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .card-prof h1 {
+      font-size: 20px;
+      color: black;
+    }
+
+    .card-prof p {
+      font-size: 12px;
+      color: rgba(115, 116, 133, 1);
+    }
+
+    .prof-article {
+      padding-left: 20px;
+      padding-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .barra-nav {
+        justify-content: flex-end; 
+      }
+      .barra-nav ul {
+        flex-direction: column;
+      }
+      .barra-nav li {
+        margin: 10px 0; 
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <img src="imagens/logo.png" alt="Logo" class="logo">
+  <nav class="barra-nav">
+    <ul id="header-botoes">
+      <li class="hb-items"><a href="page-home.html"> <img src="imagens/home.png"> </a></li>
+      <li class="hb-items"><a href="page-profile.html"> <img src="imagens/person.png"> </a></li>
+      <li class="hb-items"><a href="page-chat.html"> <img src="imagens/chatbubble-ellipses.png"> </a></li>
+      <li class="hb-items"><a href="page-login.html"> <img src="imagens/log-out.png"> </a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="topo">
+  <h1>Tópicos recentes</h1>
+  <a href="#">Ingressar numa disciplina</a>
+</div>
+
+<div class="content">
+
+  <div class="card">
+    <div class="card-prof">
+      <aside>
+        <img src="https://img.freepik.com/fotos-premium/retrato-de-uma-jovem-professora-em-pe-na-frente-de-seus-alunos-criado-com-ia-generativa_762026-42250.jpg" alt="Profile" >
+      </aside>
+      <div class="infoii-prof">
+        <main>
+          <section> 
+            <h1>Prof. Marcela Fernandes</h1>
+          </section>
+        </main>
+        <article>
+          <p>4min</p>
+        </article>
+      </div>
+    </div>
+    <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-prof">
+      <aside>
+        <img src="https://img.freepik.com/fotos-premium/retrato-de-um-professor-em-frente-a-um-fundo-de-sala-de-aula-ia-gerativa_792465-782.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1715990400&semt=ais_user" alt="Profile">
+      </aside>
+      <div class="infoii-prof">
+        <main>
+          <section> 
+            <h1>Prof. Ricardo Silva</h1>
+          </section>
+        </main>
+        <article>
+          <p>13min</p>
+        </article>
+      </div>
+    </div>
+    <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-prof">
+      <aside>
+        <img src="https://img.freepik.com/fotos-gratis/retrato-de-sorrindo-loiro-jovem-executiva-segurando-papel-e-caneta-contra-cinzento-fundo_23-2148028998.jpg" alt="Profile">
+      </aside>
+      <div class="infoii-prof">
+        <main>
+          <section> 
+            <h1>Prof. Ana Maria Pereira</h1>
+          </section>
+        </main>
+        <article>
+          <p>20min</p>
+        </article>
+      </div>
+    </div>
+    <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
