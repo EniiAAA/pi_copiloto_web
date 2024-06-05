@@ -183,7 +183,7 @@
     </div>
 
     <div class="button-container">
-      <a href="page-home.html"><button class="botaologin">Entrar</button></a>
+      <a id="confirmar" href=""><button class="botaologin">Entrar</button></a>
     </div>
 
     <div class="register-container">
@@ -194,6 +194,16 @@
 </div>
 
 <div class="footer">Copiloto © 2024</div>
+
+<script>
+  document.getElementById('role').addEventListener('change', function() {
+    var selectedOption = this.value;
+    var redirectPage = selectedOption === 'assistant' ? 'page-home.html' : 'page-prof-home.html';
+
+    document.getElementById('confirmar').setAttribute('href', redirectPage);
+  });
+</script>
+
 
 </body>
 </html>
