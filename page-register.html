@@ -3,207 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <style>
-
-    html, body {
-        overflow: hidden;
-      }      
-
-    body {
-      background-color: rgba(26, 38, 203, 1);
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-        display: flex;
-        justify-content: flex-start; /* Alteração aqui */
-        align-items: center;
-        height: 100%;
-        flex-direction: column; 
-        margin-top: 20vh; /* Nova propriedade para ajustar a margem superior */
-      } 
-
-    .logo {
-      margin-bottom: 20px; 
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 60px;
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card h1 {
-      margin-bottom: 15px;
-      text-align: left;
-      font-size: 26px;
-    }
-
-    .input-container {
-      margin-bottom: 20px;
-      position: relative;
-      flex-grow: 1;
-    }
-
-    .input-container input {
-      width: 100%;
-      padding: 15px 15px 15px 2.5em;
-      background-color: rgba(243, 243, 243, 1);
-      border-radius: 20px;
-      border: none;
-      box-sizing: border-box;
-      font-size: 13px; 
-      height: 50px; 
-    }
-
-    #email-icon,
-    #password-icon,
-    #photo-icon,
-    #role {     
-      background-repeat: no-repeat;
-      background-position: 0.5em center;
-      background-size: 1.5em;
-    }
-
-    #email-icon {
-      background-image: url("imagens/icons8-email-50.png");
-    }
-
-    #password-icon {
-      background-image: url("imagens/icons8-password-50.png");
-    }
-
-    #photo-icon {
-      background-image: url("imagens/camera.png");;
-    }
-
-    #role {
-        background-image: url("imagens/icons8-mdma-100 2.png");
-    }
-
-    .button-container {
-      text-align: right;
-      margin-top: 6px;
-    }
-
-    .button-container button {
-      padding: 15px 30px;
-      border: none;
-      border-radius: 20px;
-      background-color: rgba(26, 38, 203, 1);
-      color: white;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    .register-container {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    .register-container button {
-      padding: 15px 30px;
-      border: none;
-      border-radius: 20px;
-      background-color: transparent;
-      color: rgba(26, 38, 203, 1);
-      cursor: pointer;
-      font-size: 14px;
-      text-decoration: underline;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      background-color: rgba(26, 38, 203, 1);
-      color: white;
-      padding: 10px 0;
-    }
-
-    .input-container select {
-        padding: 15px 15px 15px 2.5em;
-        background-color: rgba(243, 243, 243, 1);
-        border-radius: 20px;
-        border: none;
-        box-sizing: border-box;
-        font-size: 13px;
-        height: 50px;
-        color: rgba(78,78,78);
-      }
-
-
-  </style>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/css-register.css">
 </head>
 <body>
 
-<div class="container">
-
-  <img src="imagens/logo.png" alt="Logo" class="logo">
-
-  <div class="card">
-    <h1>Registrando-se</h1>
-
-    <div class="input-container">
-        <select id="role" name="role">
-          <option disabled selected>Selecione sua função:</option>
-          <option value="assistant">Tutor (Copiloto) </option>
-          <option value="professor">Professor (Piloto) </option>
-        </select>
+  <div class="container">
+  
+    <img src="imagens/logo.png" alt="Logo" class="logo">
+  
+    <div class="card">
+      <h1>Registrando-se</h1>
+  
+      <div class="input-container">
+          <select id="role" name="role">
+            <option disabled selected>Selecione sua função:</option>
+            <option value="assistant">Tutor (Copiloto) </option>
+            <option value="professor">Professor (Piloto) </option>
+          </select>
+        </div>
+  
+      <div class="input-container">
+        <input type="email" id="email-icon" placeholder="E-mail">
       </div>
-
-    <div class="input-container">
-      <input type="email" id="email-icon" placeholder="E-mail">
-    </div>
-
-    <div class="input-container">
-      <input type="password" id="password-icon" placeholder="Senha">
-    </div>
-
-    <div class="input-container">
-        <input type="password" id="password-icon" placeholder="Confirme a senha">
-    </div>
-
-    <div class="input-container">
-      <input type="profile-pic" id="photo-icon" placeholder="Link da sua foto de perfil">
-    </div>
-
-    <div class="button-container">
-      <a id="confirmar" href=""><button class="botaologin">Entrar</button></a>
-    </div>
-
-    <div class="register-container">
-        <a href="page-login.html" class="divregistrar">Cancelar</a>
+  
+      <div class="input-container">
+        <input type="password" id="password-icon" placeholder="Senha">
       </div>
-
+  
+      <div class="input-container">
+          <input type="password" id="password-icon" placeholder="Confirme a senha">
+      </div>
+  
+      <div class="input-container">
+        <input type="profile-pic" id="photo-icon" placeholder="Link da sua foto de perfil">
+      </div>
+  
+      <div class="button-container">
+        <a id="confirmar" href=""><button class="botaologin">Entrar</button></a>
+      </div>
+  
+      <div class="register-container">
+          <a href="page-login.html" class="divregistrar">Cancelar</a>
+        </div>
+  
+    </div>
   </div>
-</div>
-
-<div class="footer">Copiloto © 2024</div>
-
-<script>
-  document.getElementById('role').addEventListener('change', function() {
-    var selectedOption = this.value;
-    var redirectPage = selectedOption === 'assistant' ? 'page-home.html' : 'page-prof-home.html';
-
-    document.getElementById('confirmar').setAttribute('href', redirectPage);
-  });
-</script>
-
-
-</body>
-</html>
+  
+  <div class="footer">Copiloto © 2024</div>
+  
+  <script>
+    document.getElementById('role').addEventListener('change', function() {
+      var selectedOption = this.value;
+      var redirectPage = selectedOption === 'assistant' ? 'page-home.html' : 'page-prof-home.html';
+  
+      document.getElementById('confirmar').setAttribute('href', redirectPage);
+    });
+  </script>
+  
+  
+  </body>
+  </html>
