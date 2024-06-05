@@ -237,26 +237,26 @@
       </div>
     </div>
 
-    <!-- Disciplinas -->
-    <div class="disc-all">
-      <h1 id="disciplinas-title">Disciplinas</h1>
-      <div class="disc-topo">
-        <button><h2>Matemática aplicada</h2><p>PROF. NOME COMPOSTO</p></button>
-        <button><h2>Projeto integrador</h2><p>PROF. NOME COMPOSTO</p></button>
-        <button><h2>Lógica matemática</h2><p>PROF. NOME COMPOSTO</p></button>
+      <!-- Disciplinas -->
+      <div class="disc-all">
+        <h1 id="disciplinas-title">Disciplinas</h1>
+        <div class="disc-topo">
+          <button id="matematica-btn"><h2>Matemática aplicada</h2><p>PROF. NOME COMPOSTO</p></button>
+          <button id="integrador-btn"><h2>Projeto integrador</h2><p>PROF. NOME COMPOSTO</p></button>
+          <button id="logica-btn"><h2>Lógica matemática</h2><p>PROF. NOME COMPOSTO</p></button>
         </div>
       </div>
-  
+
       <!-- Atividades -->
       <div class="atvds">
         <h1>Atividades</h1>
       </div>
-  
+
       <!-- Cards -->
-      <div class="card">
+      <div class="card" id="matematica-card">
         <div class="card-prof">
           <aside>
-            <img src="https://img.freepik.com/fotos-premium/retrato-de-uma-jovem-professora-em-pe-na-frente-de-seus-alunos-criado-com-ia-generativa_762026-42250.jpg" alt="Profile" >
+            <img src="https://img.freepik.com/fotos-premium/retrato-de-uma-jovem-professora-em-pe-na-frente-de-seus-alunos-criado-com-ia-generativa_762026-42250.jpg" alt="Profile">
           </aside>
           <div class="infoii-prof">
             <main>
@@ -271,8 +271,8 @@
         </div>
         <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
       </div>
-    
-      <div class="card">
+
+      <div class="card" id="integrador-card">
         <div class="card-prof">
           <aside>
             <img src="https://img.freepik.com/fotos-premium/retrato-de-um-professor-em-frente-a-um-fundo-de-sala-de-aula-ia-gerativa_792465-782.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1715990400&semt=ais_user" alt="Profile">
@@ -290,8 +290,8 @@
         </div>
         <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
       </div>
-    
-      <div class="card">
+
+      <div class="card" id="logica-card">
         <div class="card-prof">
           <aside>
             <img src="https://img.freepik.com/fotos-gratis/retrato-de-sorrindo-loiro-jovem-executiva-segurando-papel-e-caneta-contra-cinzento-fundo_23-2148028998.jpg" alt="Profile">
@@ -309,8 +309,39 @@
         </div>
         <p class="prof-article">Here's a small text description for the card content. Nothing more, nothing less.</p>
       </div>
-  
+
     </div>
+
+    <script>
+      // Associação entre botões e cards
+      const botaoCardMap = {
+        'Matemática aplicada': 'matematica-card',
+        'Projeto integrador': 'integrador-card',
+        'Lógica matemática': 'logica-card'
+      };
+  
+      // Função para mostrar apenas o card associado ao botão clicado
+      function mostrarCard(disciplina) {
+        // Seleciona todos os cards
+        const cards = document.querySelectorAll('.card');
+  
+        // Itera sobre cada card
+        cards.forEach(card => {
+          // Verifica se o ID do card corresponde ao da disciplina do botão clicado
+          if (card.id === botaoCardMap[disciplina]) {
+            card.style.display = 'block'; // Mostra o card
+          } else {
+            card.style.display = 'none'; // Esconde os outros cards
+          }
+        });
+      }
+  
+      // Adiciona eventos de clique aos botões
+      document.getElementById('matematica-btn').addEventListener('click', () => mostrarCard('Matemática aplicada'));
+      document.getElementById('integrador-btn').addEventListener('click', () => mostrarCard('Projeto integrador'));
+      document.getElementById('logica-btn').addEventListener('click', () => mostrarCard('Lógica matemática'));
+    </script>
+
   
   </body>
   </html>
