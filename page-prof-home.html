@@ -13,7 +13,7 @@
 
     /* Estilos do cabeçalho */
     .header {
-      background-color: rgba(26, 38, 203, 1);
+      background-color: rgba(21, 22, 28);
       color: white;
       display: flex;
       justify-content: space-between;
@@ -52,7 +52,7 @@
       text-decoration: none;
       padding: 8px 15px;
       border-radius: 5px;
-      background-color: rgba(26, 38, 203, 0.7);
+      background-color: rgba(21, 22, 28);
       min-width: 80px; /* Define um tamanho mínimo para os botões */
       display: flex;
       justify-content: center;
@@ -60,7 +60,7 @@
     }
 
     .barra-nav li a:hover {
-      background-color: rgba(26, 38, 203, 1);
+      background-color: rgba(21, 22, 28);
     }
 
     .topo {
@@ -142,20 +142,20 @@
 <body>
 
 <div class="header">
-  <img src="imagens/logo.png" alt="Logo" class="logo">
+  <img src="imagens/professor.png" alt="Logo" class="logo">
   <nav class="barra-nav">
     <ul id="header-botoes">
-      <li class="hb-items"><a href="page-home.html"> <img src="imagens/home.png"> </a></li>
-      <li class="hb-items"><a href="page-profile.html"> <img src="imagens/person.png"> </a></li>
-      <li class="hb-items"><a href="page-chat.html"> <img src="imagens/chatbubble-ellipses.png"> </a></li>
+      <li class="hb-items"><a href="page-prof-home.html"> <img src="imagens/home.png"> </a></li>
+      <li class="hb-items"><a href="page-prof-profile.html"> <img src="imagens/person.png"> </a></li>
+      <li class="hb-items"><a href=""> <img src="imagens/chatbubble-ellipses.png"> </a></li>
       <li class="hb-items"><a href="page-login.html"> <img src="imagens/log-out.png"> </a></li>
     </ul>
   </nav>
 </div>
 
 <div class="topo">
-  <h1>Tópicos recentes</h1>
-  <a href="#" onclick="openAlert()">Ingressar numa disciplina</a>
+  <h1>Seus recentes tópicos</h1>
+  <a href="#" onclick="openCreateDisciplineAlert()">Criar uma disciplina</a>
 </div>
 
 <div class="content">
@@ -163,16 +163,16 @@
   <div class="card">
     <div class="card-prof">
       <aside>
-        <img src="https://img.freepik.com/fotos-premium/retrato-de-uma-jovem-professora-em-pe-na-frente-de-seus-alunos-criado-com-ia-generativa_762026-42250.jpg" alt="Profile" >
+        <img src="https://img.freepik.com/fotos-gratis/retrato-de-sorrindo-loiro-jovem-executiva-segurando-papel-e-caneta-contra-cinzento-fundo_23-2148028998.jpg" alt="Profile">
       </aside>
       <div class="infoii-prof">
         <main>
           <section> 
-            <h1>Prof. Marcela Fernandes</h1>
+            <h1>Prof. Ana Maria Pereira</h1>
           </section>
         </main>
         <article>
-          <p>4min</p>
+          <p>20min</p>
         </article>
       </div>
     </div>
@@ -182,16 +182,16 @@
   <div class="card">
     <div class="card-prof">
       <aside>
-        <img src="https://img.freepik.com/fotos-premium/retrato-de-um-professor-em-frente-a-um-fundo-de-sala-de-aula-ia-gerativa_792465-782.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1715990400&semt=ais_user" alt="Profile">
+        <img src="https://img.freepik.com/fotos-gratis/retrato-de-sorrindo-loiro-jovem-executiva-segurando-papel-e-caneta-contra-cinzento-fundo_23-2148028998.jpg" alt="Profile">
       </aside>
       <div class="infoii-prof">
         <main>
           <section> 
-            <h1>Prof. Ricardo Silva</h1>
+            <h1>Prof. Ana Maria Pereira</h1>
           </section>
         </main>
         <article>
-          <p>13min</p>
+          <p>20min</p>
         </article>
       </div>
     </div>
@@ -221,20 +221,33 @@
 
 <!-- Script JavaScript para abrir o alerta -->
 <script>
-  function openAlert() {
-    var codigo = prompt("Código para ingressar:");
-    if (codigo) {
-      var confirmar = confirm("Tem certeza que deseja ingressar com o código " + codigo + "?");
+  function generateRandomCode(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  function openCreateDisciplineAlert() {
+    const nomeDisciplina = prompt("Nome da disciplina:");
+    if (nomeDisciplina) {
+      const codigoDisciplina = generateRandomCode(5);
+      const confirmar = confirm(`Disciplina: "${nomeDisciplina}"\nCódigo: ${codigoDisciplina}\n\nTem certeza que deseja criar esta disciplina?`);
       if (confirmar) {
-        alert("Código " + codigo + " confirmado!");
+        alert(`Disciplina "${nomeDisciplina}" com código ${codigoDisciplina} criada com sucesso!`);
       } else {
-        alert("Ingresso cancelado.");
+        alert("Criação da disciplina cancelada.");
       }
     } else {
-      alert("Nenhum código inserido.");
+      alert("Nome da disciplina não inserido.");
     }
   }
 </script>
+
+
 
 </body>
 </html>
